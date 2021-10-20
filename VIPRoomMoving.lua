@@ -38,7 +38,6 @@ local function move(tycoons)
     end
 end
 
-print("Up To Check 2")
 if selective and #tycoons > 0 then
     for _, tycoon in pairs(tycoons) do
        move(tycoon) 
