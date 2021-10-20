@@ -5,7 +5,7 @@ local selective = false
 local tycoons = {root["Bright blue"]}
 
 local searchTerms = {"VIP", "Bedrock", "Azurite", "Orpiment", "Turbo", "Enhanced", "Premium", "Elite"}
-local extra = {"OrpimentCon", "BedrockCon", "AzuriteCon", "PremiumCon"}
+local extra = {"OrpimentCon", "BedrockCon", "AzuriteCon", "PremiumCon", "EliteCon"}
     
 local function search(object)
     for _, term in pairs(searchTerms) do 
