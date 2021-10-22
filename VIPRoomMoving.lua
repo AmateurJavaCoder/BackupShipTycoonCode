@@ -4,7 +4,7 @@ local root = game.Workspace["Ship Tycoon 2"].Tycoons
 local selective = false
 local tycoons = {root["Bright blue"]}
 
-local searchTerms = {"VIP", "Bedrock", "Azurite", "Orpiment", "Turbo", "Enhanced", "Premium", "Elite"}
+local searchTerms = {"VIP", "Bedrock", "Azurite", "Orpiment", "Turbo", "Premium", "Enhanced", "Elite"}
 local extra = {"OrpimentCon", "BedrockCon", "AzuriteCon", "PremiumCon", "EliteCon"}
     
 local function search(object)
