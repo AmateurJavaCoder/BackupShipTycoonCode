@@ -1,4 +1,6 @@
-local offset = Vector3.new(0,100,0)
+function moveVIPRooms(offset1, offset2, offset3)
+local offset = Vector3.New(offset1 or 0, offset2 or 0, offset 3 or 0) 
+   
 
 local root = game.Workspace["Ship Tycoon 2"].Tycoons
 local selective = false
@@ -49,3 +51,4 @@ else
         print(tycoon.Name)
   end  
 end
+    end
