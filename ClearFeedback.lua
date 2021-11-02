@@ -1,4 +1,4 @@
-local function clearFeedback()
+function clearFeedback()
   local DSS = game:GetService("DataStoreService")
   local BugReports = DSS:GetDataStore("BugReports")
   local Feedback = DSS:GetDataStore("Feedback")
