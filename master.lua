@@ -1,0 +1,1 @@
+--[[Basically just has all the different macros in function form for easy execution!]]
