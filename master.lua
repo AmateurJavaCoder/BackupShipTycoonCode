@@ -128,4 +128,5 @@ function moveVIPRooms(offset1, offset2, offset3)
 		end  
 	end
 end
-print("Loading of functions complete")
+warn("The available commands are: ")
+warn("clearFeedback()\nclear(user)\nsyncTycoons()\nmoveVIPRooms(offset1, offset2, offset3)\n")
