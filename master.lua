@@ -128,5 +128,5 @@ function moveVIPRooms(offset1, offset2, offset3)
 		end  
 	end
 end
-warn("The available commands are: ")
-warn("clearFeedback()\nclear(user)\nsyncTycoons()\nmoveVIPRooms(offset1, offset2, offset3)\n")
+
+warn("\nThe available commands are:\nclearFeedback()\nclear(user)\nsyncTycoons()\nmoveVIPRooms(offset1, offset2, offset3)\n")
