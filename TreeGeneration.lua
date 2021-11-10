@@ -10,11 +10,11 @@ function PrimaryTree()
 end
 
 function GenerateTrees(amount)
-	for i = 1, 500 do 
+	for i = 1, amount or 100 do 
 		local Table = game.Workspace.Trees:GetChildren() 
 		local Tree = Table[math.random(1, #Table)]:Clone() 
 		Tree.Parent = game.Workspace.GeneratedTrees 
-		Tree:SetPrimaryPartCFrame(CFrame.new(math.random(-984.017, 984.017) + 189, 195.31 + Tree.Stem.Size.Y / 2, math.random(-984.017, 984.017) - 1204.16)) 
+		Tree:SetPrimaryPartCFrame(CFrame.new(math.random(-1115, 1115) + 189, 195.31 + Tree.Stem.Size.Y / 2, math.random(-1115, 1115) - 1204.16)) 
 	end
 end
 
@@ -30,6 +30,9 @@ function PruneTrees()
 		if not raycastResult then
 			print("Hovering Tree Detected - Removing Tree")
 			tree:Destroy()
-		end 
+		elseif raycastResult.Material ~= Enum.Material.Grass then
+			print("Out Of Bounds Tree Detected - Removing Tree")
+			tree:Destroy()
+		end
 	end
 end
