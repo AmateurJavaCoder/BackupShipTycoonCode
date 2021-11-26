@@ -145,9 +145,8 @@ function syncOldTycoons()
 end
 
 function help()
-	print("This is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project")
-	print("The commands are: ")
-	warn("clear(user)\nsyncTycoons() [Syncs from Bright Blue]\nsyncOldTycoons() [Syncs from Bright Red (middle)]\nmoveVIPRooms(offset1, offset2, offset3)\n")
+	warn("This is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: ")
+	warn("\nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\n\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\n")
 end
 
 
