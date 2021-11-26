@@ -15,3 +15,17 @@ function syncTycoons()
 		end
 	end
 end
+
+function syncOldTycoons()
+	for _, tycoon in pairs(game.Workspace["Ship Tycoon 2"].Tycoons:GetChildren()) do
+		if tycoon.Name ~= "Bright blue" then
+			local clone = game.Workspace["Ship Tycoon 2"].Tycoons["Bright red"]:Clone()
+			clone.Parent = game.Workspace["Ship Tycoon 2"].Tycoons
+			clone:SetPrimaryPartCFrame(tycoon.PrimaryPart.CFrame)
+			clone:WaitForChild("TeamColor").Value = tycoon:WaitForChild("TeamColor").Value
+			clone.Name = tycoon.Name
+			tycoon:Destroy()
+			print("Successfully synced tycoon: "..clone.Name)
+		end
+	end	
+end
