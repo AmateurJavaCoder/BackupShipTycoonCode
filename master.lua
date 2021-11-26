@@ -129,4 +129,20 @@ function moveVIPRooms(offset1, offset2, offset3)
 	end
 end
 
-warn("\nThe available commands are:\nclearFeedback()\nclear(user)\nsyncTycoons()\nmoveVIPRooms(offset1, offset2, offset3)\n")
+
+function syncOldTycoons()
+	for _, tycoon in pairs(game.Workspace["Ship Tycoon 2"].Tycoons:GetChildren()) do
+		if tycoon.Name ~= "Bright blue" then
+			local clone = game.Workspace["Ship Tycoon 2"].Tycoons["Bright red"]:Clone()
+			clone.Parent = game.Workspace["Ship Tycoon 2"].Tycoons
+			clone:SetPrimaryPartCFrame(tycoon.PrimaryPart.CFrame)
+			clone:WaitForChild("TeamColor").Value = tycoon:WaitForChild("TeamColor").Value
+			clone.Name = tycoon.Name
+			tycoon:Destroy()
+			print("Successfully synced tycoon: "..clone.Name)
+		end
+	end	
+end
+
+
+warn("\nThe available commands are:\nclearFeedback()\nclear(user)\nsyncTycoons() [Syncs from Bright Blue]\nsyncOldTycoons() [Syncs from Bright Red (middle)]\nmoveVIPRooms(offset1, offset2, offset3)\n")
