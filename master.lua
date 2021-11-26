@@ -132,7 +132,7 @@ end
 
 function syncOldTycoons()
 	for _, tycoon in pairs(game.Workspace["Ship Tycoon 2"].Tycoons:GetChildren()) do
-		if tycoon.Name ~= "Bright blue" then
+		if tycoon.Name ~= "Bright red" then
 			local clone = game.Workspace["Ship Tycoon 2"].Tycoons["Bright red"]:Clone()
 			clone.Parent = game.Workspace["Ship Tycoon 2"].Tycoons
 			clone:SetPrimaryPartCFrame(tycoon.PrimaryPart.CFrame)
