@@ -151,3 +151,4 @@ end
 
 
 warn("\nThe available commands are:\nclearFeedback()\nclear(user)\nsyncTycoons() [Syncs from Bright Blue]\nsyncOldTycoons() [Syncs from Bright Red (middle)]\nmoveVIPRooms(offset1, offset2, offset3)\n")
+warn("The sync old tycoon command still breaks some things (i.e. islands)")
