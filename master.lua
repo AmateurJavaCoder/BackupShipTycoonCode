@@ -1,14 +1,4 @@
---[[Basically just has all the different macros in function form for easy execution!
-Paste the whole script into console on studio, then run any of the following commands:
-
-clearFeedback()
-
-clear(user) --par1 is either the user's name or player id
-
-syncTycoons()
-
-moveVIPRooms(offset1, offset2, offset3) --Parameters are direction: X, Y, Z
-]]
+--[[Basically just has all the different macros in function form for easy execution!]]
 local DataStoreService = game:GetService("DataStoreService")
 local DSS = DataStoreService
 function clearFeedback()
