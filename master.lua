@@ -145,9 +145,11 @@ function syncOldTycoons()
 end
 
 function help()
-	warn("\n\nThis is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: \nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\n\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\n")
-	warn("\n\nThe sync old tycoon command still breaks some things (i.e. islands)")
+	warn("\n\nThis is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: \nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\n\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\nCameraWarp() [Teleports the camera to Bright Blue]\n")
 end
 
+function CameraWarp()
+	game.Workspace.CurrentCamera.CFrame = game.Workspace["Ship Tycoon 2"].Tycoons["Bright blue"].Entrance["Touch to claim ownership!"].Head.CFrame + Vector3.new(5,0,-1)	
+end
 
 help()
