@@ -47,10 +47,10 @@ function clear(userInfo)
 end
 
 function syncTycoons()
-	for _, tycoon in pairs(game.Workspace["Ship Tycoon 2"].Tycoons:GetChildren()) do
+	for _, tycoon in pairs(game.Workspace.ShipTycoon.Tycoons:GetChildren()) do
 		if tycoon.Name ~= "Bright blue" then
-			local clone = game.Workspace["Ship Tycoon 2"].Tycoons["Bright blue"]:Clone()
-			clone.Parent = game.Workspace["Ship Tycoon 2"].Tycoons
+			local clone = game.Workspace.ShipTycoon.Tycoons["Bright blue"]:Clone()
+			clone.Parent = game.Workspace.ShipTycoon.Tycoons
 			clone:PivotTo(tycoon:GetPivot())
 			clone:WaitForChild("TeamColor").Value = tycoon:WaitForChild("TeamColor").Value
 			clone.Essentials.Spawn.BrickColor = tycoon.TeamColor.Value
@@ -68,7 +68,7 @@ function moveVIPRooms(offset1, offset2, offset3)
 	local offset = Vector3.New(offset1 or 0, offset2 or 0, offset3 or 0) 
 
 
-	local root = game.Workspace["Ship Tycoon 2"].Tycoons
+	local root = game.Workspace.ShipTycoon.Tycoons
 	local selective = false
 	local tycoons = {root["Bright blue"]}
 
@@ -112,7 +112,7 @@ function moveVIPRooms(offset1, offset2, offset3)
 			print(tycoon.Name)
 		end
 	else
-		for _, tycoon in pairs(game.Workspace["Ship Tycoon 2"].Tycoons:GetChildren()) do 
+		for _, tycoon in pairs(game.Workspace.ShipTycoon.Tycoons:GetChildren()) do 
 			move(tycoon)
 			print(tycoon.Name)
 		end  
@@ -121,10 +121,10 @@ end
 
 
 function syncOldTycoons()
-	for _, tycoon in pairs(game.Workspace["Ship Tycoon 2"].Tycoons:GetChildren()) do
+	for _, tycoon in pairs(game.Workspace.ShipTycoon.Tycoons:GetChildren()) do
 		if tycoon.Name ~= "Bright red" then
-			local clone = game.Workspace["Ship Tycoon 2"].Tycoons["Bright red"]:Clone()
-			clone.Parent = game.Workspace["Ship Tycoon 2"].Tycoons
+			local clone = game.Workspace.ShipTycoon.Tycoons["Bright red"]:Clone()
+			clone.Parent = game.Workspace.ShipTycoon.Tycoons
 			clone:SetPrimaryPartCFrame(tycoon.PrimaryPart.CFrame)
 			clone:WaitForChild("TeamColor").Value = tycoon:WaitForChild("TeamColor").Value
 			clone.Name = tycoon.Name
@@ -139,7 +139,7 @@ function help()
 end
 
 function CameraWarp()
-	game.Workspace.CurrentCamera.CFrame = game.Workspace["Ship Tycoon 2"].Tycoons["Bright blue"].Entrance["Touch to claim ownership!"].Head.CFrame + Vector3.new(5,0,-1)	
+	game.Workspace.CurrentCamera.CFrame = game.Workspace.ShipTycoon.Tycoons["Bright blue"].Entrance["Touch to claim ownership!"].Head.CFrame + Vector3.new(5,0,-1)	
 end
 
 help()
