@@ -1,7 +1,10 @@
 --[[Basically just has all the different macros in function form for easy execution!]]
 local DataStoreService = game:GetService("DataStoreService")
 local DSS = DataStoreService
-function clearFeedback()
+
+local macros = {}
+
+function macros.clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
   local Feedback = DSS:GetDataStore("Feedback")
   Feedback:RemoveAsync("Value")
@@ -46,7 +49,7 @@ function clear(userInfo)
 	print(("finished (%d: %s)"):format(userId, "Purchases"))
 end
 
-function syncTycoons()
+function macros.syncTycoons()
 	for _, tycoon in pairs(game.Workspace.ShipTycoon.Tycoons:GetChildren()) do
 		if tycoon.Name ~= "Bright blue" then
 			local clone = game.Workspace.ShipTycoon.Tycoons["Bright blue"]:Clone()
