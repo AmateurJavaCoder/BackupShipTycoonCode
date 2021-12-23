@@ -2,7 +2,6 @@
 local DataStoreService = game:GetService("DataStoreService")
 local DSS = DataStoreService
 
-local macros = {}
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
