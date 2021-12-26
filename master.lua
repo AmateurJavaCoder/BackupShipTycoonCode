@@ -46,6 +46,21 @@ function clear(userInfo)
 		end
 	until pages.IsFinished
 	print(("finished (%d: %s)"):format(userId, "Purchases"))
+	
+	orderedDataStore = DataStoreService:GetOrderedDataStore("Collector" .. "/" .. userId)
+	dataStore = DataStoreService:GetDataStore("Collector" .. "/" .. userId)
+
+	repeat 
+		local pages = orderedDataStore:GetSortedAsync(false, 100)
+		local data = pages:GetCurrentPage()
+		for _, pair in pairs(data) do
+			print(("key: %d"):format(pair.key))
+			dataStore:RemoveAsync(pair.key)
+			orderedDataStore:RemoveAsync(pair.key)
+		end
+	until pages.IsFinished
+	print(("finished (%d: %s)"):format(userId, "CurrencyToCollect"))
+	
 end
 
 function syncTycoons()
