@@ -88,7 +88,7 @@ function syncTycoonScript()
 	for _, tycoon in pairs(game.Workspace.ShipTycoon.Tycoons:GetChildren()) do
 		if tycoon.Name ~= "Bright blue" then
 			tycoon.PurchaseHandler.Source = game.Workspace.ShipTycoon.Tycoons["Bright blue"].PurchaseHandler.Source	
-			print("Updated PurchaseHandler in: "..
+			print("Updated PurchaseHandler in: "..tycoon.Name)
 		end
 	end
 end
