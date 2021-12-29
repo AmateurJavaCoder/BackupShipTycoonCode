@@ -1,7 +1,10 @@
 --[[Basically just has all the different macros in function form for easy execution!]]
 local DataStoreService = game:GetService("DataStoreService")
 local DSS = DataStoreService
+local PhysicsService = game:GetService("PhysicsService")
 
+
+local Updated = "29/12/2021"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
@@ -151,8 +154,17 @@ function syncOldTycoons()
 	end	
 end
 
+function updateCollisions()
+	for _, part in pairs(game.Workspace:GetDescendants()) do
+		if part.Name == "ShipBarrier" then
+			PhysicsService:SetPartCollisionGroup(part, "ShipBarriers")
+		end
+	end
+end
+
 function help()
-	warn("\n\nThis is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: \nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\n\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\nCameraWarp() [Teleports the camera to Bright Blue]\nclearFeedback()\n")
+	warn("\n\nThis is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: \nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\n\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\nCameraWarp() [Teleports the camera to Bright Blue]\nclearFeedback()\n updateColisions()\n")
+	warn("\nLast updated: "..date)
 end
 
 function CameraWarp()
