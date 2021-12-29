@@ -4,7 +4,7 @@ local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
 
 
-local Updated = "29/12/2021"
+local Updated = "29/12/2021 14:04"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
@@ -158,6 +158,7 @@ function updateCollisions()
 	for _, part in pairs(game.Workspace:GetDescendants()) do
 		if part.Name == "ShipBarrier" then
 			PhysicsService:SetPartCollisionGroup(part, "ShipBarriers")
+			print("Set collision group")
 		end
 	end
 end
