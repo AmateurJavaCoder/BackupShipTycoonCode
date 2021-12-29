@@ -4,7 +4,7 @@ local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
 
 
-local Updated = "29/12/2021 14:04"
+local Updated = "29/12/2021 14:28 UTC+10"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
@@ -80,6 +80,14 @@ function syncTycoons()
 			clone.Name = tycoon.Name
 			tycoon:Destroy()
 			print("Successfully synced tycoon: "..clone.Name)
+		end
+	end
+end
+
+function syncTycoonScript()
+	for _, tycoon in pairs(game.Workspace.ShipTycoon.Tycoons:GetChildren()) do
+		if tycoon.Name ~= "Bright blue" then
+			game.Workspace.ShipTycoon.Tycoons["Bright blue"].PurchaseHandler		
 		end
 	end
 end
@@ -164,7 +172,7 @@ function updateCollisions()
 end
 
 function help()
-	warn("\n\nThis is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: \nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\n\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\nCameraWarp() [Teleports the camera to Bright Blue]\nclearFeedback()\nupdateColisions()\n\n\nLast updated: "..Updated.."\n")
+	warn("\n\nThis is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: \nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\nsyncTycoonScript() [Syncs purchaseHandler from Bright Blue]\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\nCameraWarp() [Teleports the camera to Bright Blue]\nclearFeedback()\nupdateColisions()\n\n\nLast updated: "..Updated.."\n")
 end
 
 function CameraWarp()
