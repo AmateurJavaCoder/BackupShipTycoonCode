@@ -87,7 +87,7 @@ end
 function syncTycoonScript()
 	for _, tycoon in pairs(game.Workspace.ShipTycoon.Tycoons:GetChildren()) do
 		if tycoon.Name ~= "Bright blue" then
-			game.Workspace.ShipTycoon.Tycoons["Bright blue"].PurchaseHandler		
+			tycoon.PurchaseHandler.Source = game.Workspace.ShipTycoon.Tycoons["Bright blue"].PurchaseHandler.Source		
 		end
 	end
 end
