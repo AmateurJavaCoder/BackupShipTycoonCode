@@ -214,7 +214,9 @@ function getFeedback()
 	end
 
 	repeat wait() until success 
-
+	
+	print("\n\n\n\n\n\n\n\n\n\n")
+	
 	if game.Players:FindFirstChild(game:GetService("Players"):GetNameFromUserIdAsync(84828376)) then
 		if rawF then
 			pagesF = HTTPService:JSONDecode(rawF) or {}
