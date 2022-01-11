@@ -186,7 +186,7 @@ function updateCollisions()
 end
 
 function help()
-	warn("\n\nThis is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: \nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\nsyncTycoonScript() [Syncs purchaseHandler from Bright Blue]\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\nCameraWarp() [Teleports the camera to Bright Blue]\nclearFeedback()\nupdateColisions()\n\n\nLast updated: "..Updated.."\n")
+	warn("\n\nThis is a macro script designed and maintained by PoppyandNeivaarecute, for use in the Ship Tycoon Restoration Project\nThe commands are: \nclear(user)\n\nsyncTycoons() [Syncs from Bright Blue]\nsyncTycoonScript() [Syncs purchaseHandler from Bright Blue]\nsyncOldTycoons() [Syncs from Bright Red (middle)]\n\nmoveVIPRooms(offset1, offset2, offset3)\nCameraWarp() [Teleports the camera to Bright Blue]\nclearFeedback\ngetFeedback()\nupdateColisions()\n\n\nLast updated: "..Updated.."\n")
 end
 
 function CameraWarp()
