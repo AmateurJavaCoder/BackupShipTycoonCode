@@ -4,7 +4,7 @@ local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
 
 
-local Updated = "11/01/2022 8:21pm UTC+10"
+local Updated = "11/01/2022 8:25pm UTC+10"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
@@ -194,6 +194,18 @@ function CameraWarp()
 end
 
 function getFeedback()
+	local ReplicatedStorage = game:GetService("ReplicatedStorage")
+	local BugEvent = ReplicatedStorage.RemoteEvents:WaitForChild("GiveBugReport")
+	local FeedbackEvent = ReplicatedStorage.RemoteEvents:WaitForChild("GiveFeedback")
+	local DS2 = require(1936396537)
+	local DSS = game:GetService("DataStoreService")
+	local HTTPService = game:GetService("HttpService")
+
+	local BugReports = DSS:GetDataStore("BugReports")
+	local Feedback = DSS:GetDataStore("Feedback")
+	local BugReportsNumber = DSS:GetDataStore("BugReportsNumber")
+	local FeedbackNumber = DSS:GetDataStore("FeedbackNumber")
+	
 	local numberF
 	local numberB
 
