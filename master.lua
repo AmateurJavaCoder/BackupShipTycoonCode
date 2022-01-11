@@ -4,7 +4,7 @@ local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
 
 
-local Updated = "5/01/2022 7:51pm UTC+10"
+local Updated = "11/01/2022 8:21pm UTC+10"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
@@ -193,4 +193,73 @@ function CameraWarp()
 	game.Workspace.CurrentCamera.CFrame = game.Workspace.ShipTycoon.Tycoons["Bright blue"].Entrance["Touch to claim ownership!"].Head.CFrame + Vector3.new(5,0,-1)	
 end
 
+function getFeedback()
+	local numberF
+	local numberB
+
+	local pagesF = nil
+	local pagesB = nil
+	local rawF
+	local rawB
+
+
+	local success, err = pcall(function()
+		rawF = Feedback:GetAsync("Value")
+		rawB = BugReports:GetAsync("Value")
+	end)
+
+	if err then
+		warn(err)
+		return
+	end
+
+	repeat wait() until success 
+
+	if game.Players:FindFirstChild(game:GetService("Players"):GetNameFromUserIdAsync(84828376)) then
+		if rawF then
+			pagesF = HTTPService:JSONDecode(rawF) or {}
+		end
+
+		if rawB then
+			pagesB = HTTPService:JSONDecode(rawB) 
+		end
+
+		warn("Player Feedback: ")
+		if pagesF then
+
+			for key, value in ipairs(pagesF) do
+				print(value)
+			end
+		end
+
+		warn("Player Bug Reports: ")
+		if pagesB then
+			for key, value in ipairs(pagesB) do
+				print(value)
+			end
+		end
+
+		local FeedbackOutput = ""
+		if pagesF then
+			for key, value in ipairs(pagesF) do
+				--print(value["Text"])
+				FeedbackOutput = FeedbackOutput.."\n \n"..value["Player"].."\n"..value["Text"]
+			end			
+		end
+
+		print(FeedbackOutput)
+		print()
+		print()
+		warn("Bug Reports")
+		print()
+		print()
+		local BugOutput = ""
+		if pagesB then
+			for key, value in ipairs(pagesB) do
+				BugOutput = BugOutput.."\n \n"..value["Player"].."\n"..value["Text"]
+			end
+		end
+		print(BugOutput)
+	end	
+end
 help()
