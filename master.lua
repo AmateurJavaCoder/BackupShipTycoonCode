@@ -88,8 +88,8 @@ function syncTycoons()
 			clone:WaitForChild("TeamColor").Value = tycoon:WaitForChild("TeamColor").Value
 			clone.Essentials.Spawn.BrickColor = tycoon.TeamColor.Value
 			clone.Purchases.VIPRoom.Color.BrickColor = tycoon.TeamColor.Value
-			clone.Entrance.Part1.BrickColor = tycoon.TeamColor.Value
-			clone.Entrance.Part2.BrickColor = tycoon.TeamColor.Value
+			clone.Entrance["Touch to claim ownership!"].Part1.BrickColor = tycoon.TeamColor.Value
+			clone.Entrance["Touch to claim ownership!"].Part2.BrickColor = tycoon.TeamColor.Value
 			clone.Name = tycoon.Name
 			tycoon:Destroy()
 			print("Successfully synced tycoon: "..clone.Name)
