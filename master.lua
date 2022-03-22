@@ -1,11 +1,10 @@
 --[[Basically just has all the different macros in function form for easy execution!]]
-print("loading")
 local DataStoreService = game:GetService("DataStoreService")
 local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
-local History = game:GetService("ChangeHistoryService")
+local ChangeHistoryService = game:GetService("ChangeHistoryService")
 
-local Updated = "22/03/2022 7:51pm UTC+10"
+local Updated = "22/03/2022 7:57pm UTC+11"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
