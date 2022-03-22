@@ -2,7 +2,7 @@
 local DataStoreService = game:GetService("DataStoreService")
 local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
-
+local History = game:GetService("ChangeHistoryService")
 
 local Updated = "11/01/2022 8:25pm UTC+10"
 
@@ -95,6 +95,8 @@ function syncTycoons()
 			print("Successfully synced tycoon: "..clone.Name)
 		end
 	end
+	ChangeHistoryService:SetWaypoint("Post Tycoon Sync)
+	warn("3 undo waypoints have been set as a buffer")
 end
 
 function syncTycoonScript()
