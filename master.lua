@@ -1,4 +1,5 @@
 --[[Basically just has all the different macros in function form for easy execution!]]
+print("loading")
 local DataStoreService = game:GetService("DataStoreService")
 local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
