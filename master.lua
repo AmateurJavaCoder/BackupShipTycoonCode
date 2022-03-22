@@ -96,7 +96,7 @@ function syncTycoons()
 			print("Successfully synced tycoon: "..clone.Name)
 		end
 	end
-	ChangeHistoryService:SetWaypoint("Post Tycoon Sync)
+	ChangeHistoryService:SetWaypoint("Post Tycoon Sync")
 	warn("3 undo waypoints have been set as a buffer")
 end
 
