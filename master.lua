@@ -4,7 +4,7 @@ local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
 local ChangeHistoryService = game:GetService("ChangeHistoryService")
 
-local Updated = "11/04/2022 10:56pm UTC+11"
+local Updated = "11/04/2022 10:54pm UTC+10"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
