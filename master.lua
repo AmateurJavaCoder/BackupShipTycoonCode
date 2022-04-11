@@ -4,7 +4,7 @@ local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
 local ChangeHistoryService = game:GetService("ChangeHistoryService")
 
-local Updated = "11/04/2022 11:02pm UTC+10"
+local Updated = "11/04/2022 11:15pm UTC+10"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
@@ -188,7 +188,7 @@ function updateCollisions()
 end
 
 function getAnalytics()
-	local Table = game:GetService("HTTPService"):JSONDecode(DatastoreService:GetDataStore("AnalyticsLeaveTime"):GetAsync(1))
+	local Table = game:GetService("HttpService"):JSONDecode(DatastoreService:GetDataStore("AnalyticsLeaveTime"):GetAsync(1))
 	print("\n\nThe following data was recorded for time before players left (time (in minutes) - amount of people)\n")
 	for index, amount in pairs (Table) do
 		print(index.." - "..amount)	
