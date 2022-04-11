@@ -191,7 +191,7 @@ function getAnalytics()
 	local Table = game:GetService("HTTPService"):JSONDecode(DatastoreService:GetDataStore("AnalyticsLeaveTime"):GetAsync(1))
 	print("\n\nThe following data was recorded for time before players left (time (in minutes) - amount of people)\n")
 	for index, amount in pairs (Table) do
-		print(index.." - "..amount\n)	
+		print(index.." - "..amount)	
 	end
 	print("\n\nAn error was recorded: "..DatastoreService:GetDataStore("AnalyticsError"):GetAsync(1).." times)	
 end
