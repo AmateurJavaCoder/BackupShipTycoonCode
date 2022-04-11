@@ -4,7 +4,7 @@ local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
 local ChangeHistoryService = game:GetService("ChangeHistoryService")
 
-local Updated = "11/04/2022 11:01pm UTC+10"
+local Updated = "11/04/2022 11:02pm UTC+10"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
@@ -193,7 +193,7 @@ function getAnalytics()
 	for index, amount in pairs (Table) do
 		print(index.." - "..amount)	
 	end
-	print("\n\nAn error was recorded: "..DatastoreService:GetDataStore("AnalyticsError"):GetAsync(1).." times)	
+	print("\n\nAn error was recorded: "..DatastoreService:GetDataStore("AnalyticsError"):GetAsync(1).." times")	
 end
 
 
