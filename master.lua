@@ -188,7 +188,7 @@ function updateCollisions()
 end
 
 function getAnalytics()
-	local Table = game:GetService("HttpService"):JSONDecode(DataStoreService:GetDataStore("AnalyticsLeaveTime"):GetAsync("1a"))
+	local Table = game:GetService("HttpService"):JSONDecode(DataStoreService:GetDataStore("AnalyticsLeaveTime"):GetAsync("1b"))
 	print("\n\nThe following data was recorded for time before players left (time (in minutes) - amount of people)\n")
 	for index, amount in pairs (Table) do
 		print(index.." - "..amount)	
