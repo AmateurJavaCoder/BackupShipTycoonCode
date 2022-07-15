@@ -4,7 +4,7 @@ local DSS = DataStoreService
 local PhysicsService = game:GetService("PhysicsService")
 local ChangeHistoryService = game:GetService("ChangeHistoryService")
 
-local Updated = "12/04/2022 5:57pm UTC+10"
+local Updated = "15/07/2022 11:04pm UTC+10"
 
 function clearFeedback()
   local BugReports = DSS:GetDataStore("BugReports")
@@ -77,6 +77,9 @@ function clear(userInfo)
 		end
 	until pages.IsFinished
 	print(("finished (%d: %s)"):format(userId, "Rebirths"))
+	
+	DataStoreService:GetOrderedDataStore("PlayerRebirths"):RemoveAsync(userId)
+	DataStoreService:GetOrderedDataStore("MoneyLeaderboard"):RemoveAsync(userId)
 end
 
 function syncTycoons()
